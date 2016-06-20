@@ -1,5 +1,5 @@
 a.out
 *.o
 
-!test_*.c
+!*.c
 test_*
