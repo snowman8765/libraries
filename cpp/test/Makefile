@@ -1,8 +1,8 @@
 # 定義済みマクロの再定義
-CC = gcc
+CC = g++
 CFLAGS = -Wall -O2
 
-EXE = test_math test_pager
+EXE = test_pager test_array
 
 # サフィックスルール適用対象の拡張子の定義
 .SUFFIXES: .c .o
@@ -12,15 +12,15 @@ EXE = test_math test_pager
 	$(CC) $(CFLAGS) -c $<
 
 # プライマリターゲット
-exe: test_math.o test_pager.o
-	$(CC) -o test_math test_math.o
-	$(CC) -o test_pager test_pager.o
+exe: test_pager.o test_array.o
+	$(CC) -o exe/test_pager test_pager.o
+	$(CC) -o exe/test_array test_array.o
 
-test_math.o: math.h
+test_pager.o: ../pager.h
 
-test_pager.o: pager.h
+test_array.o: ../array.h ../mem.h
 
 # ファイル削除用ターゲット
 .PHONY: clean
 clean:
-	$(RM) $(EXE) *.o
+	$(RM) ./exe/* *.o

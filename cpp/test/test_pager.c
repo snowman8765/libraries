@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-#include "pager.h"
+#include "../pager.h"
 
 int main ( int argc, char *argv[] )
 {

@@ -2,4 +2,8 @@ a.out
 *.o
 
 test_*
+exe/
+exe/*
+
+!*.h
 !*.c
